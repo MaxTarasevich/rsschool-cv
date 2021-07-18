@@ -1,5 +1,5 @@
 ### Position: Frontend developer
-### Name: Maksim Surname: Tarasevich
+### Name: Maksim Tarasevich
 ### Contacts:
 * Email: maxtarasevich@gmail.com
 * tel: +375299893790
@@ -14,7 +14,7 @@
  **React.**
 ### Projects:
 ###### My portfolio site: 
-* https://maxtarasevich-portfolio.netlify.app
+https://maxtarasevich-portfolio.netlify.app
 ### Work experience:
 ###### November 2019 - February 2021:
 * STEP academy, front-end development courses.

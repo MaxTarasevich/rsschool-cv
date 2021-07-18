@@ -14,7 +14,8 @@
 * **Angular**
 * **React**
 ### Projects:
-###### my portfolio site: https://maxtarasevich-portfolio.netlify.app
+###### My portfolio site: 
+* https://maxtarasevich-portfolio.netlify.app
 ### Work experience:
 ###### November 2019 - February 2021:
 * STEP academy, front-end development courses.

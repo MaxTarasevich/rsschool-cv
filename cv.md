@@ -21,5 +21,5 @@
 ###Soft skills:
 *English - Pre-Intermediate (A2)
 *Teamwork
-*sociability
+*Sociability
 

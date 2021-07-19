@@ -17,3 +17,7 @@
 ### Work experience:
 ###### November 2019 - February 2021
 * STEP academy, front-end development courses.
+### Soft skills:
+* English - Pre-Intermediate (A2)
+* Teamwork
+* Sociability

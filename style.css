@@ -32,9 +32,56 @@ h1,h2{
 .container{
     max-width: 1250px;
     margin: 0 auto;
+    position: relative;
 }
 .main .container{
     display: flex;
+}
+
+/*Hamburger*/
+.hamburger{
+    position: absolute;
+    top:50px;
+    right: 25px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+.hamburger-line{
+    position: absolute;
+    top:21px;
+    width: 50px;
+    height: 4px;
+    background-color: black;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.hamburger-line::before,.hamburger-line::after{
+    content: '';
+    width: 50px;
+    height: 4px;
+    background-color: black;
+    position: absolute;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.hamburger-line::before{
+    top:-15px;
+    transition:all 0.4s;
+}
+.hamburger-line::after{
+    bottom: -15px;
+    transition:all 0.4s;
+}
+.hamburger.active .hamburger-line{
+   background-color: #fff;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0);
+}
+.hamburger.active .hamburger-line::before{
+    transform: rotate(45deg);
+    top:0px;
+}
+.hamburger.active .hamburger-line::after{
+    transform: rotate(135deg);
+    top:0px;
 }
 
 /*Article styles*/

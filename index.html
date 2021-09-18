@@ -4,20 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="./images/favicon.svg">
+    <link rel="icon" type="image/png" href="./images/favicon.png">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
     <link rel="stylesheet" href="style.css">
     <title>Rsschool Cv</title>
 </head>
 <body>
     <main class="main">
         <div class="container">
-            
+
+           <nav class="modal-menu">
+               <ul>
+                   <li><a href="#projects">Projects</a></li>
+                   <li><a href="#education">Education</a></li>
+                   <li><a href="#experience">Experience</a></li>
+                   <li><a href="#contacts">Contacts</a></li>
+                   <li><a href="#code">Code example</a></li>
+               </ul>
+           </nav>
+
             <div class="hamburger">
                 <div class="hamburger-line"></div>
             </div>
 
             <article class="main-article">
               
-                    <ul class="main-article-contacts">
+                    <ul class="main-article-contacts" id="contacts">
+                        <li class="mobile-header">Maksim Tarasevich</li>
+                        <li class="mobile-header"> Front-end developer</li>
                         <li> 
                             <img src="./images/my_photo.jpg" alt="cv photo">
                         </li>
@@ -76,7 +93,7 @@
                     </h2>
                 </header>
 
-                <ul class="main-education">
+                <ul class="main-education" id="education">
                     <li class="list-title">Education</li>
 
                     <li class="list-content">
@@ -84,7 +101,6 @@
                             November&nbsp;2019  February&nbsp;2021
                         </div>
                         <ul class="sublist">
-                            <li class="sublist-position">Student</li>
                             <li class="sublist-company"> STEP Academy, Minsk city</li>
                             <li class="sublist-description">Training in the specialty Front-end.
                                 Implementation of educational projects within the course, in particular, site layout using HTML, CSS, JS, Bootstrap.
@@ -123,7 +139,82 @@
 
                 </ul>
 
-                <ul class="main-experience">
+                <div class="cards" id="projects">
+
+                    <h2 class="main-subtitle">My projects</h2>
+ 
+                     <div class="card">
+                         <div class="imgBox" data-text="Next.js">
+                             <img src="./images/hulu-screen.jpg" alt="my project image">
+                         </div>
+                         <div class="card-content">
+                             <h3>Next.js</h3>
+                             <p>
+                                 A clone of the Hulu site.
+                                 My first project with Next.js and Tailwind.css.
+                                 Used API themoviedb, deploy the project to Vercel.com.
+                             </p>
+                             <a class="card-link" href="https://hulu-bay-three.vercel.app/" target="_blank" rel="noopener noreferrer" >Visit demo</a>
+                         </div>
+                     </div>
+
+                     <div class="card">
+                        <div class="imgBox" data-text="Html-Css">
+                            <img src="./images/adelle.png" alt="my project image">
+                        </div>
+                        <div class="card-content">
+                            <h3>Landing page</h3>
+                            <p>
+                                Website layout, using PUG and SCSS, native JS.
+                            </p>
+                            <a class="card-link" href="https://maxtarasevich.github.io/Adele/" target="_blank" rel="noopener noreferrer" >Visit demo</a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="imgBox" data-text="PUG-SCSS">
+                            <img src="./images/electro-car.jpg" alt="my project image">
+                        </div>
+                        <div class="card-content">
+                            <h3> Multi-page site</h3>
+                            <p>
+                                Layout of a multi-page site using Gulp, PUG, SCSS, JS for form validation, accordion, slider.
+                            </p>
+                            <a class="card-link" href="https://maxtarasevich.github.io/electroMobile/" target="_blank" rel="noopener noreferrer" >Visit demo</a>
+                        </div>
+                    </div>
+
+                     <div class="card">
+                         <div class="imgBox" data-text="Angular">
+                             <img src="./images/angular app.png" alt="my project image">
+                         </div>
+                         <div class="card-content">
+                             <h3>Angular</h3>
+                             <p>
+                                 Angular application, using reactive forms, pipes, directives, services, Http requests, working with LocalStorage.
+                             </p>
+                             <a class="card-link" href="https://maxtarasevich.github.io/myFirstAngularApp/" target="_blank" rel="noopener noreferrer" >Visit demo</a>
+                         </div>
+                     </div>
+                    
+                     
+                     <div class="card">
+                        <div class="imgBox" data-text="Wordpress">
+                            <img src="./images/build_company.png" alt="my project image">
+                        </div>
+                        <div class="card-content">
+                            <h3>Wordpress</h3>
+                            <p>
+                                Website layout, landing on CMS Wordpress.
+                            </p>
+                            <a class="card-link" href="http://o299894z.beget.tech/" target="_blank" rel="noopener noreferrer" >Visit demo</a>
+                        </div>
+                    </div>
+
+ 
+                 </div>
+
+                <ul class="main-experience" id="experience">
                     <li class="list-title">Experience</li>
 
                     <li class="list-content">
@@ -153,11 +244,24 @@
                     </li>
 
                 </ul>
-
-                <div class="cards">
-                    Some of my projects:
-
+<!--
+                <div class="code" id="code">
+                    <h2 class="list-title">Some example of my code</h2>
+                    <pre>
+                        <code class="hljs html">
+                        let JobOffer = 0
+                        
+                        do {
+                          learn(JavaScript)
+                          learn(English)
+                          interview()
+                         } while (JobOffer <= 0)
+                        </code>
+                    </pre>
                 </div>
+          -->
+
+                
 
             </section>
         </div>

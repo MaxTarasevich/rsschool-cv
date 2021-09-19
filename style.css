@@ -130,6 +130,13 @@ h1,h2{
     top:0px;
 }
 
+/*About*/
+.about{
+    padding: 0 30px;
+    font-size: 20px;
+    line-height: 1.5;
+}
+
 /*Article styles*/
 .main-article{
     border-radius: 20px 0px 0px 20px;
@@ -488,6 +495,10 @@ height: 60px;
 
 }
 @media (max-width:650px){
+    .about{
+        font-size: 18px;
+        padding: 0 18px;
+    }
     .main .container{
         display: flex;
         flex-wrap: wrap;
@@ -556,9 +567,6 @@ height: 60px;
 }
 
 @media (max-width:500px){
-
-
-
 
 .main-title{
         font-size: 30px;

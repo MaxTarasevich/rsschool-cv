@@ -2,6 +2,9 @@
 *{
     box-sizing: border-box;
 }
+html{
+    scroll-behavior: smooth;
+}
 
 body{
     margin: 0;
@@ -32,9 +35,106 @@ h1,h2{
 .container{
     max-width: 1250px;
     margin: 0 auto;
+    position: relative;
 }
 .main .container{
     display: flex;
+}
+
+/*Modal*/
+.modal-menu{
+    opacity: 0;
+    top:-100%;
+    position: fixed;
+    top: 0px;
+    left:0px;
+    right: 0px;
+    background-color: rgb(70, 68, 68);
+    height: 100vh;
+    z-index: 10;
+    transition:all 0.5s ease-in;
+   pointer-events: none;
+}
+.modal-menu ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10%;
+    color:#fff;
+    font-size: 30px;
+    font-weight: 700;
+}
+.modal-menu ul li{
+    margin: 10px;
+    border-radius: 3px;
+}
+.modal-menu ul li:hover{
+  background-color:#333;
+}
+.modal-menu ul li a{
+    display: inline-block;
+    padding: 10px 30px;
+}
+.modal-menu.active{
+    opacity: 1;
+    top:0px;
+    pointer-events: all;
+}
+
+/*Hamburger*/
+.hamburger{
+    position: fixed;
+    top:50px;
+    right: 5%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    z-index: 15;
+}
+.hamburger-line{
+    position: absolute;
+    top:21px;
+    width: 100%;
+    height: 4px;
+    background-color: black;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition:all 0.4s ease-in;
+}
+.hamburger-line::before,.hamburger-line::after{
+    content: '';
+    width:100%;
+    height: 4px;
+    background-color: black;
+    position: absolute;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.hamburger-line::before{
+    top:-15px;
+    transition:all 0.4s ease-in;
+}
+.hamburger-line::after{
+    bottom: -15px;
+    transition:all 0.4s ease-in;
+}
+.hamburger.active .hamburger-line{
+    background-color: rgb(70, 68, 68);
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0);
+}
+.hamburger.active .hamburger-line::before{
+    transform: rotate(45deg);
+    top:0px;
+}
+.hamburger.active .hamburger-line::after{
+    transform: rotate(135deg);
+    top:0px;
+}
+
+/*About*/
+.about{
+    padding: 0 30px;
+    font-size: 20px;
+    line-height: 1.5;
 }
 
 /*Article styles*/
@@ -174,6 +274,103 @@ color: #6060b1;
     line-height: 1.3;
 }
 
+/*Cards*/
+
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-top: 50px;
+    border-radius: 10px;
+    background-color: rgba(20, 20, 20, 0.4);
+}
+.cards .main-subtitle{
+    width: 310px;
+    margin: 30px 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    position: relative;
+    height: 250px;
+    background-color:#fff;
+    display: flex;
+    width: 310px;
+    margin: 30px 5px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.card .imgBox{
+    position: absolute;
+    top:0px;
+    left:0px;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: 0.5s ease-in;
+}
+.imgBox img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position:top left;
+}
+.card:hover .imgBox{
+    width: 150px;
+    height: 150px;
+    left: -75px;
+    top:calc(50% - 75px);
+    transition: 0.5s ease-in-out;
+    background-color: #ff0057;
+}
+.card.active .imgBox{
+    width: 150px;
+    height: 150px;
+    left: -75px;
+    top:calc(50% - 75px);
+    transition: 0.5s ease-in-out;
+    background-color: #ff0057;
+}
+.card-content{
+    position: absolute;
+    right: 0;
+    width: calc(100% - 75px);
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.card-content h3{
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    margin-bottom: 5px;
+    font-size: 24px;
+    text-align: left;
+}
+.card-content a{
+    display: inline-block;
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color:#333;
+    text-decoration: none;
+    color: #fff;
+    transition: transform 0.3s ease-in-out;
+    border-radius: 5px;
+}
+.card-link:hover{
+    transform: scale(1.08);
+}
 /*Footer*/
 
 .footer-list{
@@ -190,11 +387,33 @@ color: #6060b1;
 width: 60px;
 height: 60px;
 }
-
+.mobile-header{
+    display: none;
+}
 /*Media*/
-
+@media (max-width:1100px){
+    .hamburger{
+        left:2%;
+    }
+    .hamburger-line, .hamburger-line::before,  .hamburger-line::after{
+        background-color: #fff;
+    }
+    
+    .hamburger.active .hamburger-line{
+        background-color: rgb(70, 68, 68);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0);
+    }
+    .cards{
+        justify-content: center;
+    }
+}
 @media (max-width:800px){
-
+    .hamburger{
+        left:15px;
+        top:15px;
+        width: 40px;
+    }
+   
     .main-article ul{
         padding: 20px 0;
         font-size: 18px;
@@ -207,8 +426,8 @@ height: 60px;
     }
     
     .main-article-lang li ,.main-article-portfolio li{
-    margin-left: 20px;
-    margin-bottom: 10px;
+        margin-left: 20px;
+        margin-bottom: 10px;
     }
     
     .main-article-skills li:first-of-type, .main-article-portfolio li:first-of-type, .main-article-lang li:first-of-type{
@@ -276,6 +495,10 @@ height: 60px;
 
 }
 @media (max-width:650px){
+    .about{
+        font-size: 18px;
+        padding: 0 18px;
+    }
     .main .container{
         display: flex;
         flex-wrap: wrap;
@@ -287,6 +510,60 @@ height: 60px;
     .main-content{
         border-radius: 0px;
     }
+    header{
+        display: none;
+    }
+    .mobile-header{
+        display: block;
+        font-size: 30px;
+        font-weight: 700;
+    }
+    .mobile-header:first-of-type{
+        padding-top: 40px;
+    }
+
+    
+
+.card{
+    display: block;
+    position: relative;
+    height: auto;
+    background-color:#fff;
+    width: 310px;
+    margin: 30px 5px;
+    cursor: pointer;
+}
+.card .imgBox{
+   position: static;
+    width: 100%;
+    height:auto;
+    background-color: #333;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: 0.5s ease-in;
+}
+.imgBox img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position:top left;
+}
+.card:hover .imgBox{
+    width: 100%;
+    height:auto;
+}
+.card.active .imgBox{
+    width:100%;
+    height:auto;
+}
+.card-content{
+    position: static;
+    width: 100%;
+   
+}
 }
 
 @media (max-width:500px){

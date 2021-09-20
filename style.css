@@ -414,6 +414,15 @@ height: 60px;
     }
 }
 @media (max-width:800px){
+    .modal-menu ul{
+        font-size: 20px;
+    }
+    .modal-menu ul li{
+        margin: 5px;
+    }
+    .modal-menu ul li a{
+        padding: 7px 30px;
+    }
     .hamburger{
         left:15px;
         top:15px;
@@ -509,6 +518,7 @@ height: 60px;
 
 }
 @media (max-width:650px){
+    
     .about{
         font-size: 18px;
         padding: 0 18px;
@@ -581,7 +591,12 @@ height: 60px;
 }
 
 @media (max-width:500px){
-
+.main-content{
+        max-width: 100%;
+    }
+.footer{
+    max-width: 100%;
+    }
 .main-title{
         font-size: 30px;
 }
